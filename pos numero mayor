@@ -1,0 +1,48 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        //33. Crea una función que devuelva la posición del número mayor de un array.
+        public int numMayor()
+        {
+            ArrayList lista = new ArrayList();
+            Random rd = new Random();
+            int mayor = 0;
+            int indice = 0;
+            for (int i =0; i < 5; i++)
+            {
+                Console.WriteLine("Ingrese sus numeros 5:", i + 1);
+                lista.Add(Convert.ToInt32(Console.ReadLine()));
+                //lista[i] = rd.Next(10);
+                //Console.WriteLine(lista[i]);
+                if (Convert.ToInt32(lista[i]) > mayor)
+                {
+                    mayor = Convert.ToInt32(lista[i]);
+                    indice = i;
+                }
+                
+            }
+            return indice;
+        }
+        static void Main(string[] args)
+        {
+            /*int i = 0;
+            while (i <= 100) {
+                Console.WriteLine(i++);
+                //i++
+            }*/
+            Program p = new Program();
+            
+            //p.numMayor(lista);
+            Console.WriteLine("La posicion del numero mayor es: {0}", p.numMayor());
+            Console.ReadLine();
+        }
+    }
+}
